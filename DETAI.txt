@@ -1,1 +1,40 @@
- # Nhóm 12 BTL
+﻿commit: Ủy thác
+repository: Kho chứa
+staging Area
+snapshot: bản chụp
+remote repository: May chu repository tu xa/ dung cho github	 
+1. Đăng kí một tài khoản github ( dùng email..)
+2. Tải Git tại trang: https://git-scm.com/download/win
+3. Cài đặt: Để mặc đinh và next
+4. Thiết lập ban đầu: Cài đặt xong, chạy Git Bash, tiến hành những thiết lập ban đầu
+	- $ git config --global user.name "Nhập tên của bạn"
+		VD: $git config --global user.name "Trung Nguyen"
+	- $ git config --global user.email "Nhập email bạn đăng kí github"
+	- Kiểm tra kết quả bằng lệnh:
+		*/ $ cat ~/.gitconfig Nếu hiển thị như dưới là ok
+			[user]
+       				 name = Trung Nguyen
+       				 email = trungnvbk97@gmail.com
+5. Cách tạo một kho chứa trên máy tính cá nhân
+ */ Cách 1: trên cửa sổ git Bash, viết:
+		$ git init "điền vào tên thư mục"
+		VD: $ git init the_example 
+		HT: Initialized empty Git repository in C:/Users/Admin/the_example/.git/
+		=> Hãy vào thư mục trên để xem kết quả
+ */ Cách 2: 
+	- Trên tài khoản github, bạn click: + -> new repository -> điền vào Repository 							-> create repository
+	- Sẽ nhận được đường link: VD: new repository = BTL_OOP_20171 thì nhận được link 	https://github.com/trungnvbk/BTL_OOP_20171.git (*)
+	- Trong git bash viết: $ git clone https://github.com/trungnvbk/BTL_OOP_20171.git
+	- LÀ XONG, đã tạo được repository trên local 
+6. Tạo một file trong repository trên local: VD tạo demo.txt
+	- $ echo "# nội dung" > demo.txt
+	- $ git add demo.txt // Thêm vào staging area. thay đổi lưu trữ trên local
+	- $ git commit -m "First commit on Github"	
+	- $ git push origin master // Thêm vào commit
+ 	- ... đăng nhập vào github
+	- Lên github kiểm tra commit xem có demo.txt với nội dung như trên hay chưa nhé <3.
+7. Đổi tên:
+- Mặc định trong câu lệnh gửi lên server: $ git push origin master thì:
+	+/ Thì origin là gì? Tất cả các repository sau khi đã được clone đều có tên là origin. Muốn thay đổi có thể dùng lệnh gán định danh như sau:
+		- $ gỉt remote rename tên_cũ tên_mới
+	+/ Kiểm tra tên remote bằng lệnh: $ git remote -v
